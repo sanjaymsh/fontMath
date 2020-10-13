@@ -11,6 +11,14 @@ matrix:
         - TOXENV=coverage
     - python: 3.7
       dist: xenial
+    - python: 3.6
+      env:
+        - BUILD_DIST=true
+        - TOXENV=coverage
+      arch: ppc64le
+    - python: 3.7
+      dist: xenial
+      arch: ppc64le
 install:
   - pip install tox-travis
 script:
