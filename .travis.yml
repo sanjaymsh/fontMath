@@ -19,6 +19,11 @@ matrix:
     - python: 3.7
       dist: xenial
       arch: ppc64le
+
+- | 
+   if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then
+       sudo chown -Rv $USER:$GROUP ~/.cache/pip/wheels
+   fi
 install:
   - pip install tox-travis
 script:
